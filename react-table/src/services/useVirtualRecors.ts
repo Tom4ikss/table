@@ -1,21 +1,20 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
+import { PAGE_SIZE } from '../config/fetchPageSize';
 import type { RecordData } from '../types/RecordData';
+import type { FetchPageResult } from '../types/FetchPageResult';
 
-export interface FetchPageResult {
-  data: RecordData[];
-  nextPage: number | null;
-}
-
-const PAGE_SIZE = 10;
-
-export const fetchRows = async ({ pageParam = 1 }): Promise<FetchPageResult & { totalCount: number }> => {
-  const res = await fetch(`http://localhost:3001/records?_page=${pageParam}&_limit=${PAGE_SIZE}`);
+export const fetchRows = async ({
+  pageParam = 1,
+}): Promise<FetchPageResult & { totalCount: number }> => {
+  const res = await fetch(
+    `http://localhost:3001/records?_page=${pageParam}&_limit=${PAGE_SIZE}`
+  );
   const data: RecordData[] = await res.json();
-  console.log(res.headers) 
+  console.log(res.headers);
   const totalCount = Number(res.headers.get('X-Total-Count'));
 
   const totalPages = Math.ceil(totalCount / PAGE_SIZE);
-  console.log(totalPages, totalCount)
+  console.log(totalPages, totalCount);
   const nextPage = pageParam < totalPages ? pageParam + 1 : null;
 
   return {
