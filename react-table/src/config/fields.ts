@@ -6,10 +6,11 @@ import type { RecordConfig } from '../types/RecordConfig';
 
 const fieldsConfig: RecordConfig = [
   { name: 'name', type: 'text', placeholder: 'Имя' },
+  { name: 'surname', type: 'text', placeholder: 'Фамилия' },
   { name: 'age', type: 'number', placeholder: 'Возраст' },
-  { name: 'address', type: 'text', placeholder: 'Адресс' },
   { name: 'phone', type: 'text', placeholder: 'Телефон' },
   { name: 'email', type: 'text', placeholder: 'Почта' },
+  { name: 'address', type: 'text', placeholder: 'Адресс' },
   { name: 'country', type: 'text', placeholder: 'Страна' },
 ];
 

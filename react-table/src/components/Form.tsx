@@ -13,6 +13,7 @@ const schema = z.object({
   age: z.coerce.number().min(0),
   address: z.string().min(1),
   country: z.string(),
+  surname: z.string(),
 });
 
 export const Form = () => {

@@ -25,9 +25,9 @@ export const fetchRows = async ({
 };
 
 export const useVirtualRecords = () =>
-  useInfiniteQuery<FetchPageResult, Error>({
+  useInfiniteQuery({
     queryKey: ['records'],
-    //@ts-expect-error в примере с документации TanStack Query абсолютно также но видимо я чего то не понимаю
-    queryFn: fetchRows,
+    queryFn: ({ pageParam }) => fetchRows({ pageParam }),
+    initialPageParam: 1,
     getNextPageParam: (lastPage) => lastPage.nextPage,
   });

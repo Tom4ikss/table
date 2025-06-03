@@ -21,10 +21,9 @@ const VirtualTable = () => {
     useVirtualRecords();
 
   const records = useMemo(
-    //@ts-expect-error ???
     () => data?.pages.flatMap((p) => p.data) ?? [],
     [data]
-  ); //ну как нет если есть
+  );
   const itemCount = hasNextPage ? records.length + 1 : records.length;
   const isItemLoaded = (index: number) => index < records.length;
   const loadMoreItems = isFetchingNextPage
