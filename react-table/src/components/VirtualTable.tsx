@@ -29,7 +29,7 @@ const VirtualTable = () => {
   const loadMoreItems = isFetchingNextPage
     ? () => Promise.resolve()
     : (startIndex: number, stopIndex: number): Promise<void> => {
-        // ??? почему я должен тут писать колбек с startIndex и stopIndex если в самих примерах на гитхабе такой логики нет
+        // ts не нравится че поделать
         console.log(startIndex, stopIndex);
         return fetchNextPage().then(() => {});
       };
