@@ -1919,56 +1919,6 @@
       "phone": "987654321",
       "age": 25,
       "address": "Санкт-Петербург"
-    },
-    {
-      "name": "Ton",
-      "email": "tom4iksharf@gmail.com",
-      "phone": "123123123123",
-      "age": 123123123,
-      "address": "Боевая,78",
-      "country": "Россия",
-      "surname": "Sharf",
-      "id": "3"
-    },
-    {
-      "name": "Ольга",
-      "email": "89276636996@yandex.ru",
-      "phone": "89276636996",
-      "age": 123123,
-      "address": "ул Казанская д 73",
-      "country": "Россия",
-      "surname": "Прокофьева",
-      "id": "15axHsL"
-    },
-    {
-      "name": "Ольга",
-      "email": "89276636996@yandex.ru",
-      "phone": "89276636996",
-      "age": 1.2312312312312313e+22,
-      "address": "ул Казанская д 73",
-      "country": "Россия",
-      "surname": "Прокофьева",
-      "id": "UV5wr3v"
-    },
-    {
-      "name": "Ольга",
-      "email": "89276636996@yandex.ru",
-      "phone": "89276636996",
-      "age": 213123123,
-      "address": "ул Казанская д 73",
-      "country": "Россия",
-      "surname": "Прокофьева",
-      "id": "ahns43c"
-    },
-    {
-      "name": "Ольга",
-      "email": "89276636996@yandex.ru",
-      "phone": "89276636996",
-      "age": 12312312312,
-      "address": "ул Казанская д 73",
-      "country": "Россия",
-      "surname": "Прокофьева",
-      "id": "8riFcuG"
     }
   ]
 }
