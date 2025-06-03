@@ -7,7 +7,7 @@ import TableHeader from './TableHeader';
 import { useMemo } from 'react';
 
 const Row = ({ index, style, data }: ListChildComponentProps) => {
-  console.log(data, index);
+  // console.log(data, index);
   if (!data[index]) return <div>Loading...</div>;
   return (
     <div style={style}>

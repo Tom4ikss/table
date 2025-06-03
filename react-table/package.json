@@ -8,13 +8,13 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server --watch db.json --port 3001"
+    "prettier-c": "prettier --check .",
+    "prettier-w": "prettier --write ."
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@tailwindcss/vite": "^4.1.8",
     "@tanstack/react-query": "^5.79.0",
-    "axios": "^1.9.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.56.4",
