@@ -2,16 +2,16 @@ import type { RecordConfig } from '../types/RecordConfig';
 
 //предполагается что имена уникальные и не будет двух полей почта или чего то такого
 //меняет всю таблицу и форму делая количество рядов динамическим
-//требует изменения RecordData
+//полностью зависим от RecordData добавление поле в RecordData оюязывает добавить конфиг для него
+//в id нет прямой необходимости, но можно использовать в key при генерации jsx через mapFields в useFieldsConfig
+//используется через хук useFieldsConfig
 
-const fieldsConfig: RecordConfig = [
-  { name: 'name', type: 'text', placeholder: 'Имя' },
-  { name: 'surname', type: 'text', placeholder: 'Фамилия' },
-  { name: 'age', type: 'number', placeholder: 'Возраст' },
-  { name: 'phone', type: 'text', placeholder: 'Телефон' },
-  { name: 'email', type: 'text', placeholder: 'Почта' },
-  { name: 'address', type: 'text', placeholder: 'Адресс' },
-  { name: 'country', type: 'text', placeholder: 'Страна' },
-];
+const fieldsConfig: RecordConfig = {
+  'name': { id: 0, type: 'text', placeholder: 'Имя' },
+  'age': { id: 2, type: 'number', placeholder: 'Возраст' },
+  'phone': { id: 3, type: 'text', placeholder: 'Телефон' },
+  'email': { id: 4, type: 'text', placeholder: 'Почта' },
+  'address': { id: 5, type: 'text', placeholder: 'Адресс' },
+};
 
 export default fieldsConfig;

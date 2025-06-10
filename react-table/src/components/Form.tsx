@@ -1,10 +1,10 @@
-import fieldsConfig from '../config/fields';
 import { Fragment } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { RecordData } from '../types/RecordData';
 import { useAddRecord } from '../services/useAddRecord';
+import { useFieldsConfig } from '../services/useFieldsConfig';
 
 const schema = z.object({
   name: z.string().min(1),
@@ -12,11 +12,12 @@ const schema = z.object({
   phone: z.string().min(5),
   age: z.coerce.number().min(0),
   address: z.string().min(1),
-  country: z.string(),
-  surname: z.string(),
 });
 
 export const Form = () => {
+
+  const {mapFields} = useFieldsConfig()
+
   const {
     register,
     handleSubmit,
@@ -42,23 +43,23 @@ export const Form = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="bg-white p-6  mx-auto space-y-6 flex flex-col"
     >
-      {fieldsConfig.map((field) => {
+      {mapFields(({name, placeholder, id}) => {
         return (
-          <Fragment key={field.name}>
+          <Fragment key={id}>
             <label
-              htmlFor={field.name}
+              htmlFor={name}
               className="mb-2 w-xs font-semibold text-slate-700"
             >
-              {field.placeholder}
+              {placeholder}
             </label>
             <input
-              {...register(field.name)}
-              id={field.name}
+              {...register(name)}
+              id={name}
               className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-slate-800 w-xs focus:border-transparenttext-slate-800"
             />
-            {errors[field.name] && (
+            {errors[name] && (
               <p className="mt-1 text-sm text-red-500">
-                {errors[field.name]?.message}
+                {errors[name]?.message}
               </p>
             )}
           </Fragment>

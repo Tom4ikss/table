@@ -1,7 +1,3 @@
 import type { RecordData } from './RecordData';
 
-export type RecordConfig = {
-  name: keyof RecordData;
-  type: string;
-  placeholder: string;
-}[];
+export type RecordConfig = Record<keyof RecordData, {id: number, type: string, placeholder: string}>
