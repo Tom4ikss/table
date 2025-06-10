@@ -1,3 +1,4 @@
-- pnpm i
-- npx json-server --watch db.json --port 3001  // .
+- npm i json-server@0.17.4 // ./
+- npx json-server --watch db.json --port 3001  // ./
+- pnpm i // ./react-table
 - pnpm run dev // ./react-table
