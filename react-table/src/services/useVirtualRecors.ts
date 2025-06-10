@@ -24,7 +24,7 @@ export const fetchRows = async ({
   };
 };
 
-export const useVirtualRecords = () =>
+export const useRecords = () =>
   useInfiniteQuery({
     queryKey: ['records'],
     queryFn: ({ pageParam }) => fetchRows({ pageParam }),

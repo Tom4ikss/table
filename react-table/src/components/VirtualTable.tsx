@@ -1,7 +1,7 @@
 import { FixedSizeList as List } from 'react-window';
 import type { ListChildComponentProps } from 'react-window';
 import TableRow from './TableRow';
-import { useVirtualRecords } from '../services/useVirtualRecors';
+import { useRecords } from '../services/useVirtualRecors';
 import InfiniteLoader from 'react-window-infinite-loader';
 import TableHeader from './TableHeader';
 import { useMemo } from 'react';
@@ -18,7 +18,7 @@ const Row = ({ index, style, data }: ListChildComponentProps) => {
 
 const VirtualTable = () => {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    useVirtualRecords();
+    useRecords();
 
   const records = useMemo(
     () => data?.pages.flatMap((p) => p.data) ?? [],

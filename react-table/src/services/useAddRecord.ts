@@ -6,7 +6,7 @@ import {
 import type { RecordData } from '../types/RecordData';
 import type { FetchPageResult } from '../types/FetchPageResult';
 
-const AddRecord = (newRecord: RecordData) =>
+const addRecord = (newRecord: RecordData) =>
   fetch('http://localhost:3001/records', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -17,7 +17,7 @@ export const useAddRecord = () => {
   const queryClient = useQueryClient();
 
   return useMutation<RecordData, Error, RecordData, unknown>({
-    mutationFn: AddRecord,
+    mutationFn: addRecord,
     onSuccess: (createdRecord: RecordData) => {
       queryClient.setQueryData<InfiniteData<FetchPageResult>>(
         ['records'],
@@ -25,9 +25,9 @@ export const useAddRecord = () => {
           if (!oldData) return oldData;
 
           const newPages = [...oldData.pages];
-          newPages[0] = {
-            ...newPages[0],
-            data: [createdRecord, ...newPages[0].data],
+          newPages[newPages.length - 1] = {
+            ...newPages[newPages.length - 1],
+            data: [...newPages[newPages.length - 1].data, createdRecord],
           };
 
           return { ...oldData, pages: newPages };

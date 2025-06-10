@@ -40,7 +40,7 @@
       "age": 30,
       "address": "Москва"
     },
-    {
+        {
       "id": "2",
       "name": "Анна",
       "email": "anna@example.com",
